@@ -1,5 +1,9 @@
 from django.db import models
 
+class Country:
+    name = models.CharField(max_length=50)
+    code = models.CharField(max_length=50)
+
 class State(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=100)
@@ -8,7 +12,7 @@ class State(models.Model):
     updated_by = models.IntegerField()
     updated_at = models.DateTimeField()
 
-class City(models):
+class City(models.Model):
     state_id = models.IntegerField()
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=100)

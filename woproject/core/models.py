@@ -1,10 +1,10 @@
 from django.db import models
 
 class Brand(models.Model):
-    name = models.CharField(max_lenght=100)
+    name = models.CharField(max_length=100)
     logo =  models.FileField()
     company = models.CharField(max_length=100)
-    origin = models.CharField(max_lenght=100)
+    origin = models.CharField(max_length=100)
     created_by = models.IntegerField()
     create_at = models.DateTimeField()
     updated_by = models.IntegerField()
@@ -64,22 +64,22 @@ class ApplianceSellerPriceAsso(models.Model):
 class Offer(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=100)
-    desccription = models.Model(max_length=200)
+    desccription = models.CharField(max_length=200)
     created_by = models.IntegerField()
     create_at = models.DateTimeField()
     updated_by = models.IntegerField()
     updated_at = models.DateTimeField()
 
-class OfferAttributes(models.Model):
-    name = models.CharField()
+class OfferAttribute(models.Model):
+    name = models.CharField(max_length=100)
     created_by = models.IntegerField()
     create_at = models.DateTimeField()
     updated_by = models.IntegerField()
     updated_at = models.DateTimeField()
     
-class OfferAttributesAsso():
+class OfferAttributeAsso(models.Model):
     offer_id = models.IntegerField()
-    offer_attributes_id = models.IntegerField()
+    offer_attribute_id = models.IntegerField()
     created_by = models.IntegerField()
     create_at = models.DateTimeField()
     updated_by = models.IntegerField()
